@@ -12,7 +12,13 @@ function User(Since, Highscore, Level) {                                        
     var User1 = new User("2019", "315", "3/5")
     var User2 = new User("2020", "215", "2/5")
     var User3 = new User("2019", "315", "3/5")
-function MyUser() {                                                                             //nested function to display output
-    document.getElementById("Get_Data").innerHTML = 
-    "your user has been with us since " + User3.User_Since + ", has " + User3.User_Highscore + " for a highscore, and " + User3.User_Level + " is your level"; 
+function MyUser() {                                                                             
+    document.getElementById("Get_Data").innerHTML = data();
+    function data() {                                                                                      //nested function to display output
+    var output = "your user has been with us since " + User3.User_Since + ", has " + User3.User_Highscore + " for a highscore, and " + User3.User_Level + " is your level"; 
+    document.write(output);    
+    }
 }
+
+
+//Really sorry about the nested function issue. For some reason I thought the "function User" had "Function Myuser" nested in it .
