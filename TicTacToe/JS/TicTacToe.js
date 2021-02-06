@@ -1,6 +1,56 @@
 let activePlayer = 'X';
 let selectedSquares = [];
 
+function audio(audioURL) {
+    let audio = new Audio(audioURL);
+    audio.play;
+}
+
+function disableClick() {
+    body.style.pointerEvents = 'none';
+    setTimeout(function()  {body.style.pointerEvents = 'auto';}, 1000);
+}
+function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
+    const canvas = document.getElementById('win-lines');
+    const c = canvas.getContext('2d');
+    let x1 = coordX1,
+        y1 = coordY1,
+        x2 = coordX2,
+        y2 = coordY2,
+        x = x1,
+        y = y1;
+
+    function animateLineDrawing() {
+        const animationLoop = requestAnimationFrame(animateLineDrawing);
+        c.clearRect(0, 0, 608, 608);
+        c.beginPath();
+        c.moveTo(x1, y1);
+        c.lineTo(x, y);
+        c.lineWidth = 10;
+        c.strokeStyle = 'rgba(70, 255, 33, .8)';
+        c.stroke();
+        if (x1 <= x2 && y1 <= y2) {
+            if (x < x2) { x += 10; }
+            if (y < y2) { y += 10; }
+            if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
+        }
+        if (x1 <= x2 && y1 >= y2) {
+            if (x < x2) { x += 10; }
+            if (y > y2) { y -= 10; }
+            if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
+    }
+}
+
+function clear() {
+    const animateLineDrawing = requestAnimationFrame(clear);
+    c.clearRect(0, 0, 608, 608);
+    cancelAnimationFrame(animationLoop);
+}
+disableClick();
+audio('media/wingame.mp3');
+animateLineDrawing();
+setTimeout(function () { clear(); resetGame(); }, 1000);  
+}
     function placeXOrO(squareNumbers) {
         if (!selectedSquares.some(element => element.includes(squareNumbers))) {
             let select = document.getElementById(squareNumbers);
@@ -33,6 +83,7 @@ let selectedSquares = [];
             audio('media/tie.mp3');
             setTimeout(function () { resetGame(); }, 1000);
         }
+        
         function arrayIncludes(squareA, squareB, squareC) {
             const A = selectedSquares.includes(squareA);
             const B = selectedSquares.includes(squareB);
@@ -41,6 +92,7 @@ let selectedSquares = [];
             if (A === true && B === true && C === true) {return true; }
             }
         }
+        checkWinConditions();
         if (activePlayer === 'X') {
             activePlayer = 'O';
         }
@@ -49,18 +101,14 @@ let selectedSquares = [];
         }
         audio('media/place.mp3');
         if (activePlayer === "O") {
-        function disableClick() {
-                body.style.pointerEvents = 'none';
-                setTimeout(function()  {body.style.pointerEvents = 'auto';}, 1000);
-            }
-            function audio(audioURL) {
-                let audio = new Audio(audioURL);
-                audio.play;
-            }
+        
+            disableClick;
+            
             setTimeout(function () { computersTurn(); }, 1000);
         }
         return true;
     }
+    
         
         function computersTurn() {
             let success = false;
