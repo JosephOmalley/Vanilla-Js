@@ -20,6 +20,7 @@ td {
     padding: 0px;
     width: 200px;
     height: 200px;
+    background-repeat: no-repeat;
 }
 
 canvas {
