@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--This links JQ library to computer-->
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //after html soc is loaded every thing between the body tags is loaded
+        $(document).ready(function() {
+           $("html").append(
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery</h1>\
+                            <p>Paragraph 1</p>\
+                            <p id='2'>Paragraph 2</p>\
+                            <p id='3'>Paragraph 3</p>\
+                        </div>\
+                    </div>\
+                </body>"
+
+           ); 
+//the $ lines"which is shorthand for jQuery" add color to text and a eventhandler that hides the h1 element           
+           $("#2").css({"color":"red"});
+        
+           $("#3").click(function() {
+               $("h1").hide('slow');
+           });
+        });
+    </script>
+</html>
