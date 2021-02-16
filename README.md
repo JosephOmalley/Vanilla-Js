@@ -5,11 +5,11 @@
 _________________________________________________
 
 - jsCalc |
-     This is a basic calculator that uses 4 operators and can handle decimals
+     This is a basic calculator that uses 4 operators and can handle decimals.
 - Basic POS machine for ordering pizza  |
-     This Js app adds together costs of size and toppings of a pizza than outputs a total
+     This Js app adds together costs of size and toppings of a pizza than outputs a total.
 - To-Do list |
-     Allows uses to add tasks and remove taskes through a clean user interface 
+     Allows uses to add tasks and remove taskes through a clean user interface.
 - Tic Tac Toe |
    Allows user to play Tic Tac Toe with a computer and has sounds built in.
 
