@@ -1,7 +1,7 @@
 # JavaScript-Projects
  A repository dedicated to JavaScript projects!
  
- Here are my vanilla JavaScript
+ Here are my vanilla JavaScript projects 
 _________________________________________________
 
 - jsCalc |
