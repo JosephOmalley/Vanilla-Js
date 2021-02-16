@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/todo.css">
+        <title>To-Do List</title>
+    </head>
+    <body>
+        <input id="task"><button id="add">add item</button>
+        <hr>
+    <div id="todos">
+    </div>
+
+        <script src="js/todo.js"></script>
+    </body>
+    <footer>
+    <div class="timeContainer">
+        <p id="time"></p> 
+        <button onclick="Clock()" id="btnTime">Get time</button>
+        <p id="Info"><strong>Todo list</strong></p>
+    </div>
+        <script>
+            function Clock() {
+        var X = Date();
+        var Y = 'Update Time';
+        document.getElementById('time').innerHTML = X;
+        document.getElementById('btnTime').innerHTML = Y;
+            }
+        </script>
+    </footer>
+</html>
