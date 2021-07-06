@@ -124,7 +124,7 @@ $(document).ready(function(){
     myModal.style.display = "block";
     });
 
-function createHide(){
+function createHide(){// creates spaces in multi word inputs
     for (let i = 0; i < choosenWordToGuess.length; i++){
         hide.push('0');
         if (choosenWordToGuess[i] == " "){
