@@ -12,7 +12,7 @@ _________________________________________________
      Allows uses to add tasks and remove taskes through a clean user interface.
 - Tic Tac Toe |
    Allows user to play Tic Tac Toe with a computer and has sounds built in.
-- [Hang Man](https://github.com/JosephOmalley/JavaScript-Projects/tree/main/Vanilla%20JavaScript/HangMan) | 
+- [Hang Man](https://github.com/JosephOmalley/Vanilla-Js/tree/main/HangMan) | 
    This is my version of hangman. Heres how it works: 
      1. A model dialogue prompts the end-user to pick a category of words to guess. 
      2. A pseudo-random word is selected by creating a pseudo-random index with the length of the chosen category. 
